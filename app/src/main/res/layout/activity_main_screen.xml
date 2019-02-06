@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainScreen">
+
+
+    <LinearLayout
+        android:id="@+id/outputArea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:background="@color/colorOutputAreaBackground"
+        android:elevation="3dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="15dp">
+
+            <TextView
+                android:id="@+id/operator"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="+"
+                android:textColor="@android:color/black"
+                android:textSize="45sp"
+                android:gravity="center|end"
+                android:paddingEnd="10dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <TextView
+                    android:id="@+id/topNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="45sp"
+                    android:gravity="bottom|end"
+                    android:maxLength="12"/>
+
+                <TextView
+                    android:id="@+id/bottomNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@android:color/black"
+                    android:textSize="45sp"
+                    android:gravity="end"
+                    android:maxLength="12"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.GridLayout
+        xmlns:grid="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        grid:alignmentMode="alignBounds"
+        grid:columnCount="4"
+        android:layout_weight="1"
+        android:background="@color/colorFunctionalButtons">
+
+        <TextView
+            android:id="@+id/AC"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorFunctionalButtons"
+            android:layout_marginRight="0.75dp"
+            android:onClick="onButtonClick"
+            android:text="AC"
+            android:gravity="center"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/CL"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:layout_marginRight="0.75dp"
+            android:background="@color/colorFunctionalButtons"
+            android:onClick="onButtonClick"
+            android:text="CL"
+            android:gravity="center"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:layout_marginRight="0.75dp"
+            android:background="@color/colorFunctionalButtons"
+            android:onClick="onButtonClick"
+            android:text="%"
+            android:gravity="center"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/divide"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorFunctionalButtons"
+            android:onClick="onButtonClick"
+            android:text="/"
+            android:gravity="center"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/seven"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:layout_marginBottom="0.75dp"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:onClick="onButtonClick"
+            android:text="7"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/eight"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="8"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/nine"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="9"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/multiply"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorFunctionalButtons"
+            android:onClick="onButtonClick"
+            android:text="*"
+            android:gravity="center"
+            android:textSize="28sp"/>
+
+        <TextView
+            android:id="@+id/four"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:layout_marginBottom="0.75dp"
+            android:elevation="3dp"
+            android:text="4"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/five"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="5"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/six"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="6"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/minus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorFunctionalButtons"
+            android:onClick="onButtonClick"
+            android:text="–"
+            android:gravity="center"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/one"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:layout_marginBottom="0.75dp"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="1"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/two"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="2"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/three"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="3"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/plus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorFunctionalButtons"
+            android:onClick="onButtonClick"
+            android:text="+"
+            android:gravity="center"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/plus_minus"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="+/–"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/zero"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="0"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/dot"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorNumericButtons"
+            android:elevation="3dp"
+            android:text="."
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textColor="@android:color/black"
+            android:onClick="onButtonClick"/>
+
+        <TextView
+            android:id="@+id/equals"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            grid:layout_columnWeight="1"
+            grid:layout_rowWeight="1"
+            grid:layout_gravity="fill"
+            android:background="@color/colorFunctionalButtons"
+            android:onClick="onButtonClick"
+            android:text="="
+            android:gravity="center"
+            android:textSize="30sp"
+            android:backgroundTint="#FB8C00"/>
+
+    </android.support.v7.widget.GridLayout>
+
+</LinearLayout>
