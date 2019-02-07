@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorOutputAreaBackground</item>
         <item name="colorPrimaryDark">@color/colorOutputAreaBackground</item>
         <item name="colorAccent">@color/colorOutputAreaBackground</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
 </resources>

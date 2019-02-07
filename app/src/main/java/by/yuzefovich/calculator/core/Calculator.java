@@ -26,6 +26,11 @@ public class Calculator {
 
     public void numericButton(String value) {
         String editableNumber = (String)displayValueBottom.getText();
+        if (editableNumber.equals("Infinity")
+                || editableNumber.equals("-Infinity")
+                || editableNumber.equals("NaN")) {
+            editableNumber = "0";
+        }
         switch (value) {
             case "+/-": {
                 if (!editableNumber.equals("0") && !editableNumber.equals("")) {
@@ -65,13 +70,15 @@ public class Calculator {
             displayValueTop.setVisibility(View.VISIBLE);
             displayValueTop.setText(formatForDisplay(firstValue));
             displayOperator.setVisibility(View.VISIBLE);
-            displayValueBottom.setText("");
         } else {
-            if (!displayValueBottom.equals("")) {
+            if (!displayValueBottom.getText().equals("")) {
                 float result = this.operator.calculate(firstValue, secondValue);
                 displayValueTop.setText(formatForDisplay(result));
+                firstValue = result;
+                secondValue = 0;
             }
         }
+        displayValueBottom.setText("");
         this.operator = operator;
         displayOperator.setText(operator.getSymbol());
     }
@@ -80,19 +87,24 @@ public class Calculator {
         if (!displayValueBottom.getText().equals("0")) {
             String editableNumber = (String)displayValueBottom.getText();
             if (editableNumber.length() != 0) {
-                editableNumber = editableNumber.substring(0, editableNumber.length() - 1);
+                if (!editableNumber.equals("Infinity")
+                        && !editableNumber.equals("-Infinity")
+                        && !editableNumber.equals("NaN")) {
+                    editableNumber = editableNumber.substring(0, editableNumber.length() - 1);
+                } else {
+                    editableNumber = "";
+                }
                 displayValueBottom.setText(editableNumber);
                 if (editableNumber.length() != 0) {
                     updateValues(editableNumber);
                 } else {
                     secondValue = 0;
+                    if (displayValueTop.getText().equals("")) {
+                        initialState(0);
+                    }
                 }
             } else {
-                if (displayValueTop.equals("")) {
-                    initialState(0);
-                } else {
-                    initialState(firstValue);
-                }
+                initialState(firstValue);
             }
         }
     }

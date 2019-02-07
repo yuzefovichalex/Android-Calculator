@@ -6,7 +6,7 @@ public class Percentage implements BinaryOperator {
 
     @Override
     public float calculate(float firstValue, float secondValue) {
-        return 0;
+        return firstValue % secondValue;
     }
 
     @Override
