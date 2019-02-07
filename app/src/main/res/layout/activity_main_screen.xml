@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainScreen">
-
+    tools:context=".app.MainScreen">
 
     <LinearLayout
         android:id="@+id/outputArea"
@@ -29,11 +27,11 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="+"
                 android:textColor="@android:color/black"
                 android:textSize="45sp"
                 android:gravity="center|end"
-                android:paddingEnd="10dp"/>
+                android:paddingEnd="10dp"
+                android:visibility="invisible"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -46,11 +44,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:text="0"
                     android:textColor="@android:color/black"
                     android:textSize="45sp"
                     android:gravity="bottom|end"
-                    android:maxLength="12"/>
+                    android:maxLength="12"
+                    android:visibility="invisible"/>
 
                 <TextView
                     android:id="@+id/bottomNum"
@@ -87,23 +85,23 @@
             grid:layout_rowWeight="1"
             grid:layout_gravity="fill"
             android:background="@color/colorFunctionalButtons"
-            android:layout_marginRight="0.75dp"
+            android:layout_marginEnd="0.75dp"
             android:onClick="onButtonClick"
-            android:text="AC"
+            android:text="@string/button_clear_all"
             android:gravity="center"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/CL"
+            android:id="@+id/CE"
             android:layout_width="0dp"
             android:layout_height="0dp"
             grid:layout_columnWeight="1"
             grid:layout_rowWeight="1"
             grid:layout_gravity="fill"
-            android:layout_marginRight="0.75dp"
+            android:layout_marginEnd="0.75dp"
             android:background="@color/colorFunctionalButtons"
             android:onClick="onButtonClick"
-            android:text="CL"
+            android:text="@string/button_clear_entered"
             android:gravity="center"
             android:textSize="25sp"/>
 
@@ -114,15 +112,15 @@
             grid:layout_columnWeight="1"
             grid:layout_rowWeight="1"
             grid:layout_gravity="fill"
-            android:layout_marginRight="0.75dp"
+            android:layout_marginEnd="0.75dp"
             android:background="@color/colorFunctionalButtons"
             android:onClick="onButtonClick"
-            android:text="%"
+            android:text="@string/button_percent"
             android:gravity="center"
             android:textSize="25sp"/>
 
         <TextView
-            android:id="@+id/divide"
+            android:id="@+id/divider"
             android:layout_width="0dp"
             android:layout_height="0dp"
             grid:layout_columnWeight="1"
@@ -130,7 +128,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorFunctionalButtons"
             android:onClick="onButtonClick"
-            android:text="/"
+            android:text="@string/button_divider"
             android:gravity="center"
             android:textSize="25sp"/>
 
@@ -145,7 +143,7 @@
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
             android:onClick="onButtonClick"
-            android:text="7"
+            android:text="@string/button_numeric_seven"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"/>
@@ -159,7 +157,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="8"
+            android:text="@string/button_numeric_eight"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -174,14 +172,14 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="9"
+            android:text="@string/button_numeric_nine"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
             android:onClick="onButtonClick"/>
 
         <TextView
-            android:id="@+id/multiply"
+            android:id="@+id/multiplier"
             android:layout_width="0dp"
             android:layout_height="0dp"
             grid:layout_columnWeight="1"
@@ -189,7 +187,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorFunctionalButtons"
             android:onClick="onButtonClick"
-            android:text="*"
+            android:text="@string/button_multiplier"
             android:gravity="center"
             android:textSize="28sp"/>
 
@@ -203,7 +201,7 @@
             android:background="@color/colorNumericButtons"
             android:layout_marginBottom="0.75dp"
             android:elevation="3dp"
-            android:text="4"
+            android:text="@string/button_numeric_four"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -218,7 +216,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="5"
+            android:text="@string/button_numeric_five"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -233,7 +231,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="6"
+            android:text="@string/button_numeric_six"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -248,7 +246,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorFunctionalButtons"
             android:onClick="onButtonClick"
-            android:text="–"
+            android:text="@string/button_minus"
             android:gravity="center"
             android:textSize="25sp"/>
 
@@ -262,7 +260,7 @@
             android:layout_marginBottom="0.75dp"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="1"
+            android:text="@string/button_numeric_one"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -277,7 +275,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="2"
+            android:text="@string/button_numeric_two"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -292,7 +290,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="3"
+            android:text="@string/button_numeric_three"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -307,7 +305,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorFunctionalButtons"
             android:onClick="onButtonClick"
-            android:text="+"
+            android:text="@string/button_plus"
             android:gravity="center"
             android:textSize="25sp"/>
 
@@ -320,7 +318,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="+/–"
+            android:text="@string/button_plus_minus"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -335,7 +333,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="0"
+            android:text="@string/button_numeric_zero"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
@@ -350,14 +348,14 @@
             grid:layout_gravity="fill"
             android:background="@color/colorNumericButtons"
             android:elevation="3dp"
-            android:text="."
+            android:text="@string/button_dot"
             android:gravity="center"
             android:textSize="25sp"
             android:textColor="@android:color/black"
             android:onClick="onButtonClick"/>
 
         <TextView
-            android:id="@+id/equals"
+            android:id="@+id/equal"
             android:layout_width="0dp"
             android:layout_height="0dp"
             grid:layout_columnWeight="1"
@@ -365,7 +363,7 @@
             grid:layout_gravity="fill"
             android:background="@color/colorFunctionalButtons"
             android:onClick="onButtonClick"
-            android:text="="
+            android:text="@string/button_equal"
             android:gravity="center"
             android:textSize="30sp"
             android:backgroundTint="#FB8C00"/>
