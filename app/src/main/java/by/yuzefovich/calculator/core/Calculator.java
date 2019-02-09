@@ -39,6 +39,8 @@ public class Calculator {
                     } else {
                         editableNumber = "-" + editableNumber;
                     }
+                } else {
+                    return;
                 }
             }
                 break;
@@ -89,7 +91,8 @@ public class Calculator {
             if (editableNumber.length() != 0) {
                 if (!editableNumber.equals("Infinity")
                         && !editableNumber.equals("-Infinity")
-                        && !editableNumber.equals("NaN")) {
+                        && !editableNumber.equals("NaN")
+                        && !(editableNumber.startsWith("-") && editableNumber.length() == 2)) {
                     editableNumber = editableNumber.substring(0, editableNumber.length() - 1);
                 } else {
                     editableNumber = "";
